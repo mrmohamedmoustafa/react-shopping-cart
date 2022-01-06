@@ -3,7 +3,7 @@ import "../../css/Header/Header.css"
 function Header () {
     return(
         <header>
-        shooping cart
+        shooping cart2
         </header>
     )
 }
