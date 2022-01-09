@@ -1,11 +1,11 @@
 import React from 'react'
 import "../../css/Footer/Footer.css"
-
+import { Static } from "../../Static";
 
 function Footer() {
     return (
         <footer>
-        &copy; Cleopatra Store 2022
+          {Static.footerTitle}
       </footer>
     )
 }
