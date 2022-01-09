@@ -1,0 +1,34 @@
+[
+    {
+        "id": "id1",
+        "title": "product01",
+        "imageUrl": "../public/images/pro01.jpg",
+        "discription": "this is product 01",
+        "price": 20,
+        "size": ["lg", "XL", "M", "S"]
+    },
+    {
+        "id": "id2",
+        "title": "product02",
+        "imageUrl": "../public/images/pro02.jpg",
+        "discription": "this is product 02",
+        "price": 20,
+        "size": ["XL", "M"]
+    },
+    {
+        "id": "id3",
+        "title": "product03",
+        "imageUrl": "../public/images/pro03.jpg",
+        "discription": "this is product 03",
+        "price": 20,
+        "size": ["lg", "M", "S", "XS"]
+    },
+    {
+        "id": "id4",
+        "title": "product04",
+        "imageUrl": "../public/images/pro04.jpg",
+        "discription": "this is product 04",
+        "price": 20,
+        "size": ["xl", "lg", "M"]
+    }
+]

@@ -1,13 +1,13 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import { Static } from "./Static";
 
 function App() {
   return (
     <div className="layout">
     <Header />
      <main>
-       content
+      { Static.content}
      </main>
      <Footer />
     </div>
