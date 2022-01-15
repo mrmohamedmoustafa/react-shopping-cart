@@ -2,7 +2,7 @@
     {
         "id": "id1",
         "title": "product01",
-        "imageUrl": "../public/images/pro01.jpg",
+        "imageUrl": "/images/anobs01.jpg",
         "discription": "this is product 01",
         "price": 20,
         "size": ["lg", "XL", "M", "S"]
@@ -10,25 +10,25 @@
     {
         "id": "id2",
         "title": "product02",
-        "imageUrl": "../public/images/pro02.jpg",
+        "imageUrl": "/images/camel-seg05.jpg",
         "discription": "this is product 02",
-        "price": 20,
+        "price": 30,
         "size": ["XL", "M"]
     },
     {
         "id": "id3",
         "title": "product03",
-        "imageUrl": "../public/images/pro03.jpg",
+        "imageUrl": "/images/cat-base02.jpg",
         "discription": "this is product 03",
-        "price": 20,
+        "price": 25,
         "size": ["lg", "M", "S", "XS"]
     },
     {
         "id": "id4",
         "title": "product04",
-        "imageUrl": "../public/images/pro04.jpg",
+        "imageUrl": "/images/elephant-kd002.jpg",
         "discription": "this is product 04",
-        "price": 20,
+        "price": 45,
         "size": ["xl", "lg", "M"]
     }
 ]
