@@ -1,14 +1,15 @@
+import React, { useState } from 'react';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { Static } from "./Static";
+import data  from './data.json';
+import Products from "./components/Products/Products";
 
 function App() {
+const [products, setproducts] = useState(data)
   return (
     <div className="layout">
     <Header />
-     <main>
-      { Static.content}
-     </main>
+    <Products products={products}/>
      <Footer />
     </div>
   );
