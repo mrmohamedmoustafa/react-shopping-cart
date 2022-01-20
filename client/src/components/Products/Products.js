@@ -2,7 +2,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import "../../css/Products/Products.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  Modal  from 'react-modal';
+import ProductModal from './ProductModal';
 
 
 function Products(props) {
@@ -32,7 +32,7 @@ function Products(props) {
                                   {product.discription}
                               </Col>
                               <Col xs={4}>
-                                  {product.price}
+                                  {product.price} $
                               </Col>
                           </Row>
                           <Button variant = "primary" className='mt-2 mb-2'>Add to cart</Button>
@@ -41,16 +41,8 @@ function Products(props) {
                      
                   ))}
 
-                  
-                      <Modal isOpen={product} onRequestClose={closeModel}>
-                        <span onClick={closeModel}>&times;</span>
-                      <div>
-                      <img src={product.imageUrl} alt={product.title} />
-                      <h3> {product.title} </h3>
-                      <h4>{product.discription}</h4>
-                      <h4>{product.price}</h4>
-                      </div>
-                      </Modal>
+                  <ProductModal product={product} closeModel={closeModel} />
+                     
                   
                   </Row>
                 </Col>

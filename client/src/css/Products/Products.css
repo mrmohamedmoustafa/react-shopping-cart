@@ -2,3 +2,37 @@ button {
   display: block;
   width: 100%;
 }
+
+.product-info img, .product-info h3, .product-info h4 {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+.product-info h3 {
+  color: green;
+}
+
+.modal {
+  width: 500px;
+  display: block;
+  margin: auto;
+}
+
+.close {
+  color: red;
+  right: 15px;
+  cursor: pointer;
+  position: absolute;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  width: 50%;
+  height: 550px;
+  display: block;
+  margin: auto;
+  box-shadow: -1px -1px 5px 24px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: -1px -1px 5px 24px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: -1px -1px 5px 24px rgba(0, 0, 0, 0.12);
+}
