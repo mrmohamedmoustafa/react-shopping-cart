@@ -2,7 +2,13 @@
 .img-size{width: 80px;}
 .margint-top{margin: 30px 0 0;}
 .btn-max-width{max-width: 150px;}
-
+.cart-total{display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+   }
+  
 @media screen and (max-width: 779px) {
     .margint-top{margin: 0 0 10px;}
 }
+
