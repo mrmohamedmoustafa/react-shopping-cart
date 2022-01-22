@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header/Header";
@@ -7,11 +7,13 @@ import data  from './data.json';
 import { Static } from  "./Static"
 import Products from "./components/Products/Products";
 import Filter from './components/Filter/Filter';
+import Cart from './components/Cart/Cart';
 
 function App() {
 const [products, setProducts] = useState(data)
 const [size, setSize] = useState("");
 const [sort, setSort] = useState("");
+const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || []);
 
 const handleFilterBySize = (e) => {
   setSize(e.target.value);
@@ -41,6 +43,30 @@ const handleFilterByPrice = (e) => {
   })
   setProducts(newProducts);
 }
+
+const addToCart = (product) => {
+  const cartItemClone = [...cartItems];
+  let isProductExist = false;
+  cartItemClone.forEach(p => {
+    if(p.id == product.id) {
+      p.qty++;
+      isProductExist = true;
+    }
+  })
+  if(!isProductExist) {
+    cartItemClone.push({...product, qty : 1})
+  }
+  setCartItems(cartItemClone);
+}
+
+useEffect(() => {
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+}, [cartItems])
+
+const removeFromCart = (product) => {
+  const cartItemClone = [...cartItems];
+  setCartItems(cartItemClone.filter(p => p.id !== product.id))
+}
   return (
     <div className="layout">
       
@@ -48,12 +74,19 @@ const handleFilterByPrice = (e) => {
     <Container fluid>
       <Row>
         <Col md={{ order: 'first'}}>
-      <Products products={products}/>
+      <Products products={products} addToCart={addToCart}/>
       </Col>
       <Col md= {3} xs= {{ order:'first' }}>
-      <Filter handleFilterBySize={handleFilterBySize} size={size} handleFilterByPrice={handleFilterByPrice} sort={sort}/>
+      <Filter
+      productsNomber = {products.length}
+      size={size}
+      sort={sort}
+      handleFilterBySize={handleFilterBySize}
+      handleFilterByPrice={handleFilterByPrice}
+          />
       </Col>
       </Row>
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
       </Container>
      <Footer />
     

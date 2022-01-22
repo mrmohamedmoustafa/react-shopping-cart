@@ -9,7 +9,7 @@ function Filter(props) {
       <Card.Header className='header'>
       {Static.filter}
       </Card.Header>
-      <Card.Title className='mt-3 m-2'>Number of Products</Card.Title>
+      <Card.Title className='mt-3 m-2'>Number of Products {props.productsNomber}</Card.Title>
       <Card.Body>
           <Form>
               <Form.Group className='mb-3'>
