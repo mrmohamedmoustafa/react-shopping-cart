@@ -31,6 +31,18 @@ function Cart(props) {
             ))}
               
           </div>
+          {
+              props.cartItems.length !== 0 && (
+                <div className='cart-total'>
+                <h4>
+                    Total: ${props.cartItems.reduce( (acc, p) => {
+                    return acc + (p.price * p.qty)
+                    } , 0)}
+                </h4>
+                <Button variant='primary' className='btn-max-width'>Select Products</Button>
+            </div>
+              )
+          }
       </div>
     );
 }
