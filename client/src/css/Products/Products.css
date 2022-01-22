@@ -42,5 +42,7 @@ button {
 }
 
 @media screen and (max-width: 779px) {
-  .max-width{max-width: 100%;}
+  .max-width {
+    max-width: 100%;
+  }
 }

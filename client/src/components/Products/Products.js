@@ -36,7 +36,7 @@ function Products(props) {
                                   {product.price} $
                               </Col>
                           </Row>
-                          <Button variant = "primary" className='mt-2 mb-2'>Add to cart</Button>
+                          <Button variant = "primary" className='mt-2 mb-2' onClick={() => props.addToCart(product)}>Add to cart</Button>
                       </Col>
                      
                      
