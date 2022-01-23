@@ -37,12 +37,12 @@ button {
   -moz-box-shadow: -1px -1px 5px 24px rgba(0, 0, 0, 0.12);
 }
 
-.max-width {
+.max-width-colm {
   max-width: 25%;
 }
 
 @media screen and (max-width: 779px) {
-  .max-width {
+  .max-width-colm {
     max-width: 100%;
   }
 }
