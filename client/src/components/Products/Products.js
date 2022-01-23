@@ -24,7 +24,7 @@ function Products(props) {
                 <Row>
                   {props.products.map(product => (
                       
-                           <Col key={product.id} className='border rounded m-2 max-width'>
+                           <Col key={product.id} className='border rounded m-2 max-width-colm'>
                           <a href="#" onClick={() => openModal(product)}>
                           <img src={product.imageUrl} alt={product.title} />
                           </a>

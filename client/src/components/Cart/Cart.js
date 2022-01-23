@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Col, Button, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../css/Cart/Cart.css";
+import Checkout from '../CheckoutForm/Checkout';
 
 function Cart(props) {
+
+    const [showForm, setShowForm] = useState(false)
+    const [value, setValue] = useState("")
+
+    const submitOrder = (e) => {
+        e.preventDefault();
+        console.log(value);
+        const order = {
+            name  : value.name,
+            email : value.email
+        }
+    }
+    const handleChange = (e) => {
+        setValue( (prevState) => ({ ...prevState, [e.target.name] : e.target.value}) )
+    }
   return(
       <div className='max-width mt-5 mb-3'>
           <h5>{props.cartItems.length === 0 ? 'Your cart is empty' : <span>
@@ -19,7 +35,7 @@ function Cart(props) {
                         <Col md={9}>
                             <h4>{item.title}</h4>
                             <p>qty = {item.qty}</p>
-                            <p>${item.price}</p>
+                            <p>${(item.price * item.qty)}</p>
                         </Col>
                         <Col md={3}>
                             <Button onClick={()=> props.removeFromCart(item)} variant='outline-secondary' size="sm" className='margint-top btn-max-width float-end'>Remove Product</Button>
@@ -39,10 +55,18 @@ function Cart(props) {
                     return acc + (p.price * p.qty)
                     } , 0)}
                 </h4>
-                <Button variant='primary' className='btn-max-width'>Select Products</Button>
-            </div>
+                <Button variant='primary' className='btn-max-width' onClick={() => setShowForm(true)}>Select Products</Button>
+                 </div>
               )
           }
+        <Checkout
+        showForm={showForm}
+       
+        submitOrder={submitOrder}
+        setShowForm={setShowForm}
+        handleChange={handleChange}
+        />
+
       </div>
     );
 }
