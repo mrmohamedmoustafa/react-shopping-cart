@@ -3,6 +3,7 @@ import { Row, Col, Button, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../css/Cart/Cart.css";
 import Checkout from '../CheckoutForm/Checkout';
+import Bounce from 'react-reveal/Bounce'
 
 function Cart(props) {
 
@@ -21,9 +22,11 @@ function Cart(props) {
         setValue( (prevState) => ({ ...prevState, [e.target.name] : e.target.value}) )
     }
   return(
+     
       <div className='max-width mt-5 mb-3'>
           <h5>{props.cartItems.length === 0 ? 'Your cart is empty' : <span>
           There is {props.cartItems.length} products in your cart</span>}</h5>
+          <Bounce top cascade>
           <div className='border border-bottom-0 p-3 pb-0'>
             {props.cartItems.map(item => (
                 <Row key={item.id} className='border-bottom mb-2'>
@@ -47,6 +50,7 @@ function Cart(props) {
             ))}
               
           </div>
+          </Bounce>
           {
               props.cartItems.length !== 0 && (
                 <div className='cart-total'>
@@ -68,6 +72,7 @@ function Cart(props) {
         />
 
       </div>
+      
     );
 }
 
