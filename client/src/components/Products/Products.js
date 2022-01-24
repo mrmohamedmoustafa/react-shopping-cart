@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import "../../css/Products/Products.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductModal from './ProductModal';
-
+import Bounce from 'react-reveal/Bounce';
 
 
 function Products(props) {
@@ -18,38 +18,40 @@ function Products(props) {
         setProduct(false)
     }
     return (
-        <div>
-           <Row className='mt-2'>
-                <Col >
-                <Row>
-                  {props.products.map(product => (
-                      
-                           <Col key={product.id} className='border rounded m-2 max-width-colm'>
-                          <a href="#" onClick={() => openModal(product)}>
-                          <img src={product.imageUrl} alt={product.title} />
-                          </a>
-                          <Row>
-                              <Col xs={8}>
-                                  {product.discription}
-                              </Col>
-                              <Col xs={4}>
-                                  {product.price} $
-                              </Col>
-                          </Row>
-                          <Button variant = "primary" className='mt-2 mb-2' onClick={() => props.addToCart(product)}>Add to cart</Button>
-                      </Col>
-                     
-                     
-                  ))}
+        <Bounce left cascade>
+            <div>
+            <Row className='mt-2'>
+                    <Col >
+                    <Row>
+                    {props.products.map(product => (
+                        
+                            <Col key={product.id} className='border rounded m-2 max-width-colm'>
+                            <a href="#" onClick={() => openModal(product)}>
+                            <img src={product.imageUrl} alt={product.title} />
+                            </a>
+                            <Row>
+                                <Col xs={8}>
+                                    {product.discription}
+                                </Col>
+                                <Col xs={4}>
+                                    {product.price} $
+                                </Col>
+                            </Row>
+                            <Button variant = "primary" className='mt-2 mb-2' onClick={() => props.addToCart(product)}>Add to cart</Button>
+                        </Col>
+                        
+                        
+                    ))}
 
-                  <ProductModal product={product} closeModel={closeModel} />
-                     
-                  
-                  </Row>
-                </Col>
-               
-            </Row>
-        </div>
+                    <ProductModal product={product} closeModel={closeModel} />
+                        
+                    
+                    </Row>
+                    </Col>
+                
+                </Row>
+            </div>
+        </Bounce>
     )
 }
 

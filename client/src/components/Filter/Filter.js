@@ -2,9 +2,11 @@ import React from 'react';
 import { Card, Form } from 'react-bootstrap'
 import { Static } from  "../../Static"
 import "../../css/Filter/Filter.css";
+import Bounce from 'react-reveal/Bounce'
 
 function Filter(props) {
   return(
+    <Bounce right>
    <Card className='mt-2'>
       <Card.Header className='header'>
       {Static.filter}
@@ -35,6 +37,7 @@ function Filter(props) {
           </Form>
       </Card.Body>
   </Card>
+  </Bounce>
   )}
 
 
