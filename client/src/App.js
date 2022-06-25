@@ -29,7 +29,7 @@ const handleFilterBySize = (e) => {
 const handleFilterByPrice = (e) => {
   let order = e.target.value;
   setSort(order);
-  let productsClone = (data);
+  let productsClone = [...products];
   let newProducts = productsClone.sort( function(a, b) {
     if(order == "lowest"){
      return a.price - b.price
